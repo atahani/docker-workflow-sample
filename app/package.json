@@ -1,0 +1,11 @@
+{
+  "name": "micro_service_sample_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Ahmad Tahani",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.3.6"
+  }
+}

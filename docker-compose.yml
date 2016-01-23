@@ -1,0 +1,41 @@
+# mongo DB
+db:
+  image: mongo
+  volumes:
+    - data:/data/db
+    - backup:/dump
+# nodejs app 1
+nodejs_app_1:
+  build: app/
+  links:
+    - db:our_mongodb
+  restart: always
+# nodejs app 2
+nodejs_app_2:
+  build: app/
+  links:
+    - db:our_mongodb
+  restart: always
+# nodejs app 3
+nodejs_app_3:
+  build: app/
+  links:
+    - db:our_mongodb
+  restart: always
+# nodejs app 4
+nodejs_app_4:
+  build: app/
+  links:
+    - db:our_mongodb
+  restart: always
+
+# nginx
+nginx:
+  build: nginx/
+  ports:
+    - "80:80"
+  links:
+    - nodejs_app_1:app_1
+    - nodejs_app_2:app_2
+    - nodejs_app_3:app_3
+    - nodejs_app_4:app_4
