@@ -1,4 +1,4 @@
-FROM node:5.2.0-wheezy
+FROM node:9.4.0-slim
 MAINTAINER "ahmad.tahani@gmail.com"
 
 RUN mkdir -p /nodejs/app

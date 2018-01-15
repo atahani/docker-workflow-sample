@@ -1,6 +1,6 @@
 # mongo DB
 db:
-  image: mongo
+  image: mongo:3.4.10
   volumes:
     - data:/data/db
     - backup:/dump
