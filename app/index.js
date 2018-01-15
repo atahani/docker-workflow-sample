@@ -12,7 +12,12 @@ if(process.env.APP_PORT){
 }
 //define mongoose connection string
 //NOTE:since 'our_mongodb' link to this container, use 'our_mongodb' name as ip address of mongodb server
-mongoose.connect('mongodb://our_mongodb/foo');
+mongoose.connect('mongodb://our_mongodb/foo',{
+  useMongoClient: true,
+});
+
+// mpromise (mongoose's default promise library) was decrypted
+mongoose.Promise = require('bluebird');
 
 var Counter = mongoose.model('Counter',{
   title:String,
